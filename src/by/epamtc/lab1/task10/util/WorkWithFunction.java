@@ -2,7 +2,7 @@ package by.epamtc.lab1.task10.util;
 
 public class WorkWithFunction {
     public static Table[] calculateFunction(double start,double end,double step) throws IllegalArgumentException{
-        if(start-end<=0 || step<=0){
+        if(start>=end || step<=0){
             throw new IllegalArgumentException("Некоррекные входные данные");
         }
         int sizeOfArray=(int)Math.ceil((end-start)/step);
