@@ -15,9 +15,9 @@ public class Runner {
         System.out.println("Введите число D:");
         d= DataScanner.scanConsoleInt();
         if(MathTool.ishaveEvenNumbers(2,a,b,c,d)){
-            System.out.println(true);
+            System.out.println("true");
         }else{
-            System.out.println(false);
+            System.out.println("false");
         }
     }
 }

@@ -8,8 +8,8 @@ public class Runner {
     public static void main(String[] args) {
         System.out.println("Введите площадь описанного квадрата:");
         double areaOut;
-        double radius=-1;
-        double areaIn=-1;
+        double radius;
+        double areaIn;
         double difference;
         do{
              areaOut= DataScanner.scanConsoleDouble();
@@ -18,21 +18,12 @@ public class Runner {
              }
         }while (areaOut<=0);
 
-        try {
-            radius= AreaTool.calculateCircleRadiusInscribedInSquare(areaOut);
-        }catch (IllegalArgumentException e){
-            System.err.println(e.getMessage());
-        }
-
-        try {
-            areaIn=AreaTool.calculateSquareAreaInscribedInCircle(radius);
-        }catch (IllegalArgumentException e){
-            System.err.println(e.getMessage());
-        }
-
+        radius= AreaTool.calculateCircleRadiusInscribedInSquare(areaOut);
+        areaIn=AreaTool.calculateSquareAreaInscribedInCircle(radius);
 
         System.out.println("Площадь квадрата вписанного в окружность:"+areaIn);
-        difference=areaOut/areaIn;
+
+        difference=AreaTool.calculateDifference(areaOut,areaIn);
         System.out.println("Площадь описанного квадрата больше в: "+difference+" раз(а)");
     }
 }

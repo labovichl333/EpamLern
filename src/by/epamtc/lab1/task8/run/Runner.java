@@ -8,13 +8,7 @@ public class Runner {
 
         System.out.println("Введите X");
         double x= DataScanner.scanConsoleDouble();
-        double result;
-
-        if(x>=3){
-            result= FunctionСalculator.calculateFirstScript(x);
-        }else {
-            result= FunctionСalculator.calculateSecondScript(x);
-        }
+        double result=FunctionСalculator.calculateScript(x);
         System.out.println("Результат функции: "+result);
     }
 }

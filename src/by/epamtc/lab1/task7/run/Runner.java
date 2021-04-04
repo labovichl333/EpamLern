@@ -16,13 +16,10 @@ public class Runner {
 
         double dist1= CoordinatesTool.calculateDistanceToStart(x1,y1);
         double dist2= CoordinatesTool.calculateDistanceToStart(x2,y2);
-
-        if(dist1>dist2){
-            System.out.println("Точка А ближе к началу координат");
-        }else if(dist1<dist2){
-            System.out.println("Точка В ближе к началу координат");
-        }else {
-            System.out.println("Точки А и В находятся на одинаковом расстоянии от начала координат");
-        }
+        String str0="Точки А и В находятся на одинаковом расстоянии от начала координат";
+        String str1="Точка А ближе к началу координат";
+        String str2="Точка В ближе к началу координат";
+        String massage=CoordinatesTool.crateMassegeAboutDistanseToStart(dist1,dist2,str0,str1,str2);
+        System.out.println(massage);
     }
 }

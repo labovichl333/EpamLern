@@ -8,9 +8,9 @@ public class Runner {
     public static void main(String[] args) {
         System.out.println("Введите число секунд:");
         int seconds;
-        int sec=-1;
-        int min=-1;
-        int hour=-1;
+        int sec;
+        int min;
+        int hour;
 
         do{
             seconds= DataScanner.scanConsoleInt();
@@ -19,22 +19,9 @@ public class Runner {
             }
         }while (seconds<=0);
 
-        try {
-            sec= TimeTool.convertToFullSeconds(seconds);
-        }catch (IllegalArgumentException e){
-            System.err.println(e.getMessage());
-        }
-
-        try {
-            min=TimeTool.convertToFullMinutess(seconds);
-        }catch (IllegalArgumentException e){
-            System.err.println(e.getMessage());
-        }
-        try {
-            hour=TimeTool.convertToFullHours(seconds);
-        }catch (IllegalArgumentException e){
-            System.err.println(e.getMessage());
-        }
+        sec= TimeTool.convertToFullSeconds(seconds);
+        min=TimeTool.convertToFullMinutess(seconds);
+        hour=TimeTool.convertToFullHours(seconds);
 
         System.out.println("Прошло "+hour+" часов "+min+" минут "+sec+" секунд");
     }

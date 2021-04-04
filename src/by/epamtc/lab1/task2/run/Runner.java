@@ -8,7 +8,7 @@ public class Runner {
         System.out.println("Введите год:");
         int year;
         int month;
-        int days=0;
+        int days;
         do{
             year= DataScanner.scanConsoleInt();
             if(year<=0){
@@ -24,11 +24,8 @@ public class Runner {
             }
         }while (month<=0 || month>12);
 
-        try {
-            days= YearsTool.calculateNumberDaysInMonth(month,year);
-        }catch (IllegalArgumentException e){
-            System.err.println(e.getMessage());
-        }
+        days= YearsTool.calculateNumberDaysInMonth(month,year);
+
         System.out.println("Количество дней : "+days);
         if(YearsTool.isLeapYear(year)){
             System.out.println("Год високосный");

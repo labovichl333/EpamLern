@@ -6,6 +6,7 @@ public class TimeTool {
 
     public static int convertToFullHours(int seconds) throws IllegalArgumentException{
         if(seconds<0){
+            //здесь нужно выбросить своё исключение
             throw new IllegalArgumentException("Некоррекные входные данные");
         }
         int fullHours=seconds/SECONDS_IN_HOUR;
@@ -14,6 +15,7 @@ public class TimeTool {
 
     public static int convertToFullMinutess(int seconds) throws IllegalArgumentException{
         if(seconds<0){
+            //здесь нужно выбросить своё исключение
             throw new IllegalArgumentException("Некоррекные входные данные");
         }
         int fullMinutes=(seconds-convertToFullHours(seconds)*SECONDS_IN_HOUR)/SECONDS_IN_MINUTE;
@@ -22,6 +24,7 @@ public class TimeTool {
 
     public static int convertToFullSeconds(int seconds) throws IllegalArgumentException{
         if(seconds<0){
+            //здесь нужно выбросить своё исключение
             throw new IllegalArgumentException("Некоррекные входные данные");
         }
         int fullSeconds=seconds-convertToFullHours(seconds)*SECONDS_IN_HOUR-convertToFullMinutess(seconds)*SECONDS_IN_MINUTE;

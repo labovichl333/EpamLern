@@ -15,10 +15,7 @@ public class Runner {
             }
         }while (num<=0);
 
-        if(MathTool.isNumberPerfect(num)){
-            System.out.println(true);
-        }else {
-            System.out.println(false);
-        }
+        System.out.println(MathTool.isNumberPerfect(num));
+
     }
 }

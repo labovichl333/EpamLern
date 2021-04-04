@@ -3,6 +3,7 @@ package by.epamtc.lab1.task10.util;
 public class WorkWithFunction {
     public static Table[] calculateFunction(double start,double end,double step) throws IllegalArgumentException{
         if(start>=end || step<=0){
+            //здесь нужно выбросить своё исключение
             throw new IllegalArgumentException("Некоррекные входные данные");
         }
         int sizeOfArray=(int)Math.ceil((end-start)/step);
@@ -16,7 +17,11 @@ public class WorkWithFunction {
         }
         return answer;
     }
-    public static void printTable(Table[] table){
+    public static void printTable(Table[] table)throws IllegalArgumentException{
+        if(table==null){
+            //здесь нужно выбросить своё исключение
+            throw new IllegalArgumentException("Некоррекные входные данные");
+        }
         for (int i = 0; i <table.length; i++) {
             System.out.printf("%3f | %3f\n",table[i].getVaiue(),table[i].getResult());
         }

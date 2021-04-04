@@ -10,7 +10,7 @@ public class Runner {
         double start;
         double end;
         double step;
-        Table[] table=null;
+        Table[] table;
         System.out.println("Введите начало диапазона:");
         start= DataScanner.scanConsoleDouble();
 
@@ -30,11 +30,7 @@ public class Runner {
             }
         }while (step<=0);
 
-        try {
-            table=WorkWithFunction.calculateFunction(start,end,step);
-        }catch (IllegalArgumentException e){
-            System.err.println(e.getMessage());
-        }
+        table=WorkWithFunction.calculateFunction(start,end,step);
         WorkWithFunction.printTable(table);
     }
 }
