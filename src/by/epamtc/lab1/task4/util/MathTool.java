@@ -1,10 +1,9 @@
 package by.epamtc.lab1.task4.util;
 
 public class MathTool {
-    public static boolean ishaveEvenNumbers(int minCountOfEvenNumbers,int ... numbers)throws IllegalArgumentException{
+    public static boolean ishaveEvenNumbers(int minCountOfEvenNumbers,int ... numbers){
         if(minCountOfEvenNumbers<0){
             //здесь нужно выбросить своё исключение
-            throw new IllegalArgumentException("Некоррекные входные данные");
         }
         boolean flag =false;
         int counter=0;

@@ -3,6 +3,9 @@ package by.epamtc.lab1.task2.util;
 public class YearsTool {
 
     public static boolean isLeapYear(int year){
+        if(year<0){
+            //выбросить своё исключение
+        }
         boolean answer=false;
         if((year%4==0 && year%100!=0) || (year%100==0 && year%400==0)){
             answer=true;
@@ -10,11 +13,10 @@ public class YearsTool {
         return  answer;
     }
 
-    public static int calculateNumberDaysInMonth(int month,int year) throws IllegalArgumentException{
+    public static int calculateNumberDaysInMonth(int month,int year) {
         int days;
         if(month<1 || month>12 || year<=0){
             //здесь нужно выбросить своё исключение
-            throw new IllegalArgumentException("Некоррекные входные данные");
         }
         switch (month){
             case 2 :

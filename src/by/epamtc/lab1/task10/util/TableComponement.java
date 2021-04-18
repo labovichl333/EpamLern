@@ -1,13 +1,13 @@
 package by.epamtc.lab1.task10.util;
 
 import java.io.Serializable;
-import java.util.Objects;
 
-public class Table implements Serializable {
+
+public class TableComponement implements Serializable {
     private double vaiue;
     private double result;
 
-    public Table(double vaiue, double result) {
+    public TableComponement(double vaiue, double result) {
         this.vaiue = vaiue;
         this.result = result;
     }
@@ -22,23 +22,23 @@ public class Table implements Serializable {
 
     @Override
     public String toString() {
-        return "Table{" +
+        return "Table"+"@"+"{" +
                 "vaiue=" + vaiue +
                 ", result=" + result +
-                '}';
+                "}";
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Table table = (Table) o;
+        TableComponement table = (TableComponement) o;
         return Double.compare(table.vaiue, vaiue) == 0 &&
                 Double.compare(table.result, result) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vaiue, result);
+        return (int)((37+result)*vaiue);
     }
 }

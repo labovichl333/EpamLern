@@ -1,16 +1,16 @@
 package by.epamtc.lab1.task10.run;
 
 import by.epamtc.lab1.scanner.DataScanner;
-import by.epamtc.lab1.task10.util.Table;
+import by.epamtc.lab1.task10.util.Priter;
+import by.epamtc.lab1.task10.util.TableComponement;
 import by.epamtc.lab1.task10.util.WorkWithFunction;
-import by.epamtc.lab1.task2.util.YearsTool;
 
 public class Runner {
     public static void main(String[] args) {
         double start;
         double end;
         double step;
-        Table[] table;
+        TableComponement[] table;
         System.out.println("Введите начало диапазона:");
         start= DataScanner.scanConsoleDouble();
 
@@ -31,6 +31,6 @@ public class Runner {
         }while (step<=0);
 
         table=WorkWithFunction.calculateFunction(start,end,step);
-        WorkWithFunction.printTable(table);
+        Priter.printTable(table);
     }
 }
